@@ -1,0 +1,46 @@
+STYLELOOP CLOTHINGSTORE PROJECT INSTRUCTIONS
+
+1. Extract the StyleLoop folder to:
+   C:\xampp\htdocs\
+
+2. Start XAMPP.
+   - Start Apache.
+   - Start MySQL.
+
+3. Open this link first:
+   http://localhost/StyleLoop/loadClothingStore.php
+
+   This automatically creates the ClothingStore database, all required tables, the administrator account, sample users, and sample clothing items.
+
+4. Open the application:
+   http://localhost/StyleLoop/index.php
+
+5. Test login details:
+
+   Admin Login:
+   Email: admin@styleloop.co.za
+   Password: admin123
+
+   Verified User Login:
+   Username: john
+   Email: john@gmail.com
+   Password: user123
+
+6. To show pending verification:
+   - Register a new account.
+   - Try logging in with that account. It will say pending administrator verification.
+   - Login as admin.
+   - Click Verify.
+   - Then login as the newly verified user.
+
+7. Rubric pages/files included:
+   - DBConn.php: database connection file.
+   - createTable.php: includes DBConn.php, recreates tblUser, loads userData.txt.
+   - userData.txt: five user records.
+   - images folder: more than five jpg images with appropriate names.
+   - shop.php: displays clothing items with picture Add To Cart button and price popup.
+   - itemsTable.php: reads items into an associative array and displays table headers.
+   - adminLogin.php: checks administrator email and hashed password.
+   - adminDashboard.php: verifies, updates, and deletes users.
+   - myClothingStore.sql: exported DDL structure.
+   - tableStructure.txt: readable table structure for documentation.

@@ -1,0 +1,56 @@
+STYLELOOP RUBRIC CHECKLIST - FINAL VERSION
+
+1. GOOD CODING STANDARDS
+- Clear file names: DBConn.php, createTable.php, loadClothingStore.php, register.php, login.php, adminLogin.php, adminDashboard.php.
+- Variables are descriptive: fullName, adminEmail, passwordHash, clothesID, totalAmount.
+- Comments are included throughout the PHP files.
+- Folder structure is simple and correct.
+
+2. CSS AND USER DESIGN
+- style.css gives the app a professional StyleLoop look matching the screenshots.
+- Login page, dashboard, product listing, cart and table display are styled.
+
+3. DATABASE AND CONNECTION
+- Run loadClothingStore.php to create ClothingStore automatically.
+- Tables: tblUser, tblAdmin, tblClothes, tblOrder, tblMessages.
+- DBConn.php connects using MySQLi.
+- createTable.php includes DBConn.php and reloads tblUser from userData.txt.
+- userData.txt contains five sample users.
+
+4. USER REGISTRATION AND LOGIN
+- register.php requires all fields.
+- User details are saved into tblUser.
+- Passwords are hashed using password_hash().
+- login.php checks username, email and hashed password using password_verify().
+- New users remain pending until verified by the Administrator.
+
+5. ADMIN LOGIN AND USER VERIFICATION
+- Admin logs in with admin email address: admin@styleloop.co.za.
+- Admin password is checked against the hashed password in tblAdmin.
+- Admin can verify users, update users and delete users.
+
+6. CLOTHES / ITEM TABLE STRUCTURE
+- images folder contains more than five JPG image files.
+- itemsTable.php reads tblClothes into the associative array named $tbl_Item.
+- itemsTable.php displays table headers and item records.
+- Each row contains the item picture and an AddToCart/Cart Picture button.
+- When AddToCart is clicked, SellPrice is shown in a popup and the app returns to the table.
+
+7. CART
+- cart.php shows selected items, item pictures, prices and total cost.
+
+8. POE DOCUMENTATION
+- tableStructure.txt and StyleLoop_Table_Structure.docx are included.
+- myClothingStore.sql is included for exported database structure.
+
+DEMO VIDEO FLOW
+1. Run http://localhost/StyleLoop/loadClothingStore.php.
+2. Open http://localhost/StyleLoop/index.php.
+3. Register a new user.
+4. Try to log in and show the pending verification message.
+5. Log in as admin with admin@styleloop.co.za and admin123.
+6. Verify the new user.
+7. Log out and log in as the verified user.
+8. Open Item Table and click Add To Cart to show the SellPrice popup.
+9. Open Cart to show item total.
+10. Open the code files: DBConn.php, register.php, login.php, adminDashboard.php, itemsTable.php.
