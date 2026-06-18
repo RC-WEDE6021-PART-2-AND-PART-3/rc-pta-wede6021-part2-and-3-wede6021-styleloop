@@ -1,0 +1,46 @@
+HOW TO RUN STYLELOOP
+
+1. Extract this ZIP file.
+2. Copy the StyleLoop folder to:
+   C:\xampp\htdocs\
+3. Open XAMPP Control Panel.
+4. Start Apache and MySQL.
+5. In your browser, run this first:
+   http://localhost/StyleLoop/loadClothingStore.php
+   This creates the ClothingStore database, tables and sample data.
+6. Open the website:
+   http://localhost/StyleLoop/index.php
+
+ADMIN LOGIN
+Email: admin@styleloop.co.za
+Password: admin123
+
+TEST USER LOGIN
+Username: john
+Email: john@gmail.com
+Password: user123
+
+FULL MARKS DEMO VIDEO ORDER
+1. Run loadClothingStore.php.
+2. Show phpMyAdmin and the ClothingStore database tables.
+3. Open the website and show Home, Shop, Login, Register, Admin, Dashboard, Cart, Messages and Purchase History.
+4. Register a new user.
+5. Try to login before admin approval.
+6. Login as admin and verify the user.
+7. Login using the verified user information.
+8. Seller uploads an item with brand name.
+9. Admin approves/updates/deletes clothing.
+10. Show shop filtering by category and price.
+11. Add item to cart and show SellPrice popup.
+12. Checkout and show the reference number.
+13. Show purchase history/report totals.
+14. Show admin messages with buyers/sellers.
+15. Show the code files in GitHub Classroom.
+
+FILES ADDED FOR RUBRIC
+- CartClass.php with AddItem, RemoveItem, Checkout, EmptyCart, Login and ProcessInput functions.
+- purchaseHistory.php for user purchase history and totals.
+- adminReports.php for admin purchase/shopping visits report.
+- tblShoppingVisit table stores completed shopping visits.
+- POE_Section2_Self_Reflection.docx.
+- Peer_Evaluation_Form.docx.

@@ -1,0 +1,13 @@
+UPDATED REQUIREMENTS ADDED
+
+1. Shop filter now works by selected category and selected price range.
+2. Seller upload form now includes Brand Name.
+3. Seller upload creates a Pending selling request.
+4. Pending seller items do not show in the shop until admin approves them.
+5. Admin can approve or reject seller item requests.
+6. Admin can update and delete clothing items.
+7. Admin can communicate with sellers and buyers through Admin Messages.
+8. Buyers and sellers can message the administrator about item delivery and condition.
+9. Checkout notifies the administrator to confirm delivery and item condition.
+
+Run loadClothingStore.php again after replacing the project so the updated tables are created.

@@ -1,0 +1,70 @@
+DROP DATABASE IF EXISTS ClothingStore;
+CREATE DATABASE ClothingStore;
+USE ClothingStore;
+
+CREATE TABLE tblUser (
+    UserID INT AUTO_INCREMENT PRIMARY KEY,
+    FullName VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Username VARCHAR(50) NOT NULL UNIQUE,
+    PasswordHash VARCHAR(255) NOT NULL,
+    IsVerified TINYINT DEFAULT 0,
+    DateRegistered TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tblAdmin (
+    AdminID INT AUTO_INCREMENT PRIMARY KEY,
+    AdminEmail VARCHAR(100) NOT NULL UNIQUE,
+    PasswordHash VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE tblClothes (
+    ClothesID INT AUTO_INCREMENT PRIMARY KEY,
+    SellerID INT NULL,
+    BrandName VARCHAR(100) NOT NULL,
+    ItemName VARCHAR(100) NOT NULL,
+    Category VARCHAR(50) NOT NULL,
+    Description TEXT NOT NULL,
+    Price DECIMAL(10,2) NOT NULL,
+    ConditionStatus VARCHAR(50) NOT NULL,
+    Size VARCHAR(30) DEFAULT 'Medium',
+    ImageName VARCHAR(255) NOT NULL,
+    Availability VARCHAR(20) DEFAULT 'Available',
+    ApprovalStatus VARCHAR(20) DEFAULT 'Approved',
+    DeliveryStatus VARCHAR(60) DEFAULT 'Not Delivered Yet',
+    DateUploaded TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (SellerID) REFERENCES tblUser(UserID) ON DELETE SET NULL
+);
+
+CREATE TABLE tblOrder (
+    OrderID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID INT NULL,
+    ClothesID INT NULL,
+    ReferenceNumber VARCHAR(40) NOT NULL,
+    OrderDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    TotalAmount DECIMAL(10,2) NOT NULL,
+    OrderStatus VARCHAR(40) DEFAULT 'Pending Delivery Check',
+    FOREIGN KEY (UserID) REFERENCES tblUser(UserID) ON DELETE SET NULL,
+    FOREIGN KEY (ClothesID) REFERENCES tblClothes(ClothesID) ON DELETE SET NULL
+);
+
+CREATE TABLE tblShoppingVisit (
+    VisitID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID INT NULL,
+    ReferenceNumber VARCHAR(40) NOT NULL,
+    TotalAmount DECIMAL(10,2) NOT NULL,
+    VisitStatus VARCHAR(60) DEFAULT 'Checkout completed',
+    VisitDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserID) REFERENCES tblUser(UserID) ON DELETE SET NULL
+);
+
+CREATE TABLE tblMessages (
+    MessageID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID INT NULL,
+    ClothesID INT NULL,
+    SenderRole VARCHAR(20) NOT NULL,
+    MessageText TEXT NOT NULL,
+    DateSent TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserID) REFERENCES tblUser(UserID) ON DELETE SET NULL,
+    FOREIGN KEY (ClothesID) REFERENCES tblClothes(ClothesID) ON DELETE SET NULL
+);
