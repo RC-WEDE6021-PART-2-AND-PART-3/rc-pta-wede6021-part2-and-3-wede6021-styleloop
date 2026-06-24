@@ -1,0 +1,43 @@
+STYLELOOP FINAL RUBRIC CHECKLIST
+
+Good coding standards:
+- Clear variable names and comments are used throughout the PHP files.
+- Correct file names and folder structure are used.
+- CSS gives the application a professional, consistent look.
+
+Database and connection:
+- ClothingStore database is created automatically by loadClothingStore.php.
+- DBConn.php is used as the include connection file.
+- createTable.php and userData.txt are included.
+- myClothingStore.sql exports the DDL structure.
+
+User and admin:
+- User registration stores data in MySQL.
+- All registration fields are required.
+- Passwords are hashed and verified.
+- New users are pending until admin verifies them.
+- Admin can verify, add, update and delete users.
+
+Clothing/items:
+- Images folder contains more than 5 jpg files.
+- tblClothes stores brand name, image, category, price, condition and approval status.
+- Seller can send a request to sell.
+- Admin approves/rejects seller requests.
+- Admin can update and delete clothing items.
+
+Shop and cart:
+- Category and price filter works.
+- Product table/listing displays items and images.
+- AddToCart shows SellPrice popup.
+- Cart has AddItem, RemoveItem, EmptyCart, Checkout, Login and ProcessInput functions in CartClass.php.
+- Checkout creates a reference number and empties cart.
+- Checkout is stored in tblOrder and tblShoppingVisit.
+
+Communication and reports:
+- Admin communicates with buyers and sellers using adminMessages.php.
+- User sees messages in messages.php.
+- Purchase history report displays previous purchases and totals.
+- Admin report shows all purchases and shopping visits.
+
+Video checklist:
+- Show website pages, registration, admin approval, user login, shop, cart, checkout, purchase history, database tables and code files.

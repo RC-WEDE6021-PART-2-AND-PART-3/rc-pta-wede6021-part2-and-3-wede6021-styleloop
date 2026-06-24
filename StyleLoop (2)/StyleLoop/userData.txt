@@ -1,0 +1,5 @@
+John Doe,john@gmail.com,john,29ef52e7563626a96cea7f4b4085c124
+Dineo Makgatho,dineo@gmail.com,dineo,29ef52e7563626a96cea7f4b4085c124
+Lerato Mokoena,lerato@gmail.com,lerato,29ef52e7563626a96cea7f4b4085c124
+Thabo Molefe,thabo@gmail.com,thabo,29ef52e7563626a96cea7f4b4085c124
+Amo Nkosi,amo@gmail.com,amo,29ef52e7563626a96cea7f4b4085c124
